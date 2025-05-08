@@ -1,0 +1,65 @@
+version: 2
+
+models:
+  - name: dim_features
+    columns:
+
+      - name: feature_name
+        tests:
+          - unique
+          - not_null
+
+      - name: is_premium
+        tests:
+          - accepted_values:
+              values: ['true','false']
+
+  - name: dim_product_release
+    columns:
+
+      - name: release_id
+        tests:
+          - unique
+
+      - name: feature_name
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_features')
+              field: feature_name
+
+  - name: dim_users
+    columns:
+
+      - name: user_id
+        tests:
+          - unique
+          - not_null
+
+      - name: referrer
+        tests:
+          - not_null
+
+  - name: fact_user_activity
+    columns:
+
+      - name: user_id
+        tests:
+          - relationships:
+              to: ref('dim_users')
+              field: user_id
+
+      - name: session_id
+        tests:
+          - not_null
+
+      - name: feature_name
+        tests:
+          - relationships:
+              to: ref('dim_features')
+              field: feature_name
+
+      - name: plan
+        tests:
+          - accepted_values:
+              values: ['Free','Basic','Pro']

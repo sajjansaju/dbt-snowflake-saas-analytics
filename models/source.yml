@@ -1,0 +1,26 @@
+version: 2
+
+sources:
+  - name: PRODUCT_ANALYTICS
+    schema: public
+    tables:
+      - name: sessions
+        identifier: sessions
+      
+      - name: users
+        identifier: users
+      
+      - name: features
+        identifier: features
+
+      - name: events
+        identifier: events
+       
+      - name: subscriptions
+        identifier: subscriptions
+
+      - name: feedback  
+        identifier: feedback
+
+      - name: product_release
+        identifier: product_releases
