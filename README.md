@@ -1,5 +1,4 @@
 # 📊 User Journey & Feature Adoption Analysis for a SaaS Productivity Platform   
-
 ---
 
 ## 📌 Project Description
