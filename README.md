@@ -1,4 +1,4 @@
-# 📊 User Journey & Feature Adoption Analysis for a SaaS Productivity Platform  
+# 📊 User Journey & Feature Adoption Analysis for a SaaS Productivity Platform   
 
 ---
 
